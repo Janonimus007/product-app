@@ -35,9 +35,10 @@
    ```bash
     npx expo start
 ### Librerías utilizadas
-Librerías utilizadas
-React Native: Framework base.
-Redux Toolkit: Manejo del estado global.
-Axios: Cliente HTTP para interactuar con APIs.
-React Navigation: Navegación en la app.
-Native Base: Diseño y componentes estilizados.
+
+- **React Native**: Framework base.
+- **Redux Toolkit**: Manejo del estado global.
+- **axios**: Cliente HTTP para interactuar con APIs.
+- **React Navigation:**: Navegación en la app.
+- **Native Base**: Diseño y componentes estilizados.
+
