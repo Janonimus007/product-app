@@ -8,10 +8,13 @@ import { styles } from "./LoginForm.styles";
 import axios from 'axios';
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 import { ToastError } from "../../global/toast/ToastError";
-// import  ToastError  from "../../global/toast/ToastError";
+import { useAppDispatch } from "../../../store/reduxHooks";
+import { login } from "../../../store/slices/auth.slice";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -19,14 +22,15 @@ export const LoginForm = () => {
     validateOnChange: false,
     onSubmit: async (formValues) => {
       try {
-
         console.log("Formulario enviado con éxito:", formValues);
         const response = await axios.post('https://fakestoreapi.com/auth/login', {
-          username: formValues.username, 
-          password: formValues.password, 
+          username: formValues.username,
+          password: formValues.password,
         });
-    
-        console.log('Respuesta del servidor:', response.data);
+
+        const token = response.data.token;
+        dispatch(login(token)); // Guarda el token en el estado global
+        console.log('Inicio de sesión exitoso, token:', token);
 
       } catch (error :any) {
         console.log("este es el error -> ", error.message);
