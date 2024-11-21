@@ -24,14 +24,17 @@
    ```bash
    git clone https://github.com/Janonimus007/product-app.git
    cd product-app
+2. Instala las dependencias:
 
-   npm install
-# o si prefieres yarn
    ```bash
-yarn install
-   ```bash
-npx expo start
+    npm install
+    # o si prefieres yarn
+    yarn install
+3. Configura tu emulador y corre el proyexto:
 
+   ```bash
+    npx expo start
+### Librerías utilizadas
 Librerías utilizadas
 React Native: Framework base.
 Redux Toolkit: Manejo del estado global.
