@@ -48,7 +48,7 @@ export const LoginForm = () => {
     <Box  style={styles.containerForm}>
       <VStack >
 
-        <Text style={styles.titleForm}>Iniciar sesion</Text>
+        <Text style={styles.titleForm}>Iniciar sesión</Text>
 
         <FormControl style={styles.inputContainer} isInvalid={!!formik.errors.username}>
           <FormControl.Label >Nombre de usuario</FormControl.Label>

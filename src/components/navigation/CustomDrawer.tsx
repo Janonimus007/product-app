@@ -29,7 +29,7 @@ export default function CustomDrawer(props:any) {
         <TouchableOpacity onPress={()=>logout()} style={styles.logout}>
             <HStack>
             <MaterialIcons name="logout" size={24} color="black" />  
-                <Text style={styles.textLogout}>Cerrar Sesion</Text>
+                <Text style={styles.textLogout}>Cerrar Sesión</Text>
             </HStack>
         </TouchableOpacity> 
     </View>
