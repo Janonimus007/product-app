@@ -4,7 +4,7 @@
 - **Lista de productos**: Muestra un listado de productos obtenidos desde la API.
 - **Detalle del producto**: Visualiza información detallada de un producto seleccionado.
 - **Gestión del estado global**: Implementado con **Redux Toolkit** y `createAsyncThunk` para manejar la obtención de datos.
-- **Drawer Navigation**: Menú lateral para navegar entre secciones.
+- **Drawer Navigation**: Menú lateral para navegar entre secciones y stack navigation.
 - **Pull to Refresh**: Recarga la lista de productos al deslizar hacia abajo.
 
 ---
