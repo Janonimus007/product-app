@@ -27,7 +27,9 @@
 
    npm install
 # o si prefieres yarn
+   ```bash
 yarn install
+   ```bash
 npx expo start
 
 Librerías utilizadas
