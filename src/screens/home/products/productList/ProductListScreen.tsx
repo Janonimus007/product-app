@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../store/reduxHooks";
 import { fetchProducts } from "../../../../store/slices/products.slice";
 import { ProductCardComponent } from "../../../../components/products/ProductCardComponent";
 import { styles } from "./ProductList.styles";
+import CustomLoader from "../../../../components/products/CustomLoader";
 
 const ProductList = () => {
   const dispatch = useAppDispatch();
@@ -22,7 +23,7 @@ const ProductList = () => {
   };
 
   if (loading) {
-    return <ActivityIndicator size="large" style={styles.loader} />;
+    return <CustomLoader/>
   }
 
   if (error) {

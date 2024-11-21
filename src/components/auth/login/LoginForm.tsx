@@ -13,6 +13,7 @@ import { login } from "../../../store/slices/auth.slice";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const dispatch = useAppDispatch();
 
@@ -22,6 +23,7 @@ export const LoginForm = () => {
     validateOnChange: false,
     onSubmit: async (formValues) => {
       try {
+        setIsLoading(true)
         console.log("Formulario enviado con éxito:", formValues);
         const response = await axios.post('https://fakestoreapi.com/auth/login', {
           username: formValues.username,
@@ -29,12 +31,15 @@ export const LoginForm = () => {
         });
 
         const token = response.data.token;
-        dispatch(login(token)); // Guarda el token en el estado global
+        dispatch(login(token)); 
         console.log('Inicio de sesión exitoso, token:', token);
 
       } catch (error :any) {
         console.log("este es el error -> ", error.message);
         ToastError('Usuario o contraseña incorrectos')
+      }
+      finally{
+        setIsLoading(false)
       }
     },
   });
@@ -84,7 +89,7 @@ export const LoginForm = () => {
           )}
         </FormControl>
 
-        <Button style={styles.buttonForm} onPress={()=>formik.handleSubmit()} >
+        <Button isLoading={isLoading} style={styles.buttonForm} onPress={()=>formik.handleSubmit()} >
           Iniciar Sesión
         </Button>            
 
